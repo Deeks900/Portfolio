@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: #02040a;
+  background: radial-gradient(circle at top, #060c1f, #02040a);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #02040a;
+  overflow-x: hidden;
+
+  /* smooth scroll feel */
+  scroll-behavior: smooth;
+}

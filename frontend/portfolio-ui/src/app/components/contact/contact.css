@@ -1,0 +1,96 @@
+.contact-section {
+  padding: 100px 80px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  margin-top: -110px;
+}
+
+.contact-container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85);
+}
+
+.neon-title {
+  font-size: 2.8rem;
+  color: #00f5ff;
+  margin-bottom: 20px;
+}
+
+.contact-subtitle {
+  font-size: 1.1rem;
+  color: #a0cfff;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  margin-bottom: 28px;
+  color: #cccccc;
+}
+
+.contact-email a {
+  color: #00f5ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.contact-email a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #ffffff;
+  background: rgba(0, 245, 255, 0.1);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.social-icon i {
+  font-size: 1.2rem;
+}
+
+/* Neon hover effect */
+.social-icon:hover {
+  background: rgba(0, 245, 255, 0.25);
+  box-shadow: 0 0 15px #00f5ff, 0 0 25px #7b2cff;
+}
+
+.social-icon.github { color: #fff; }
+.social-icon.linkedin { color: #0a66c2; }
+.social-icon.twitter { color: #1da1f2; }
+
+.footer-line {
+  font-size: 0.95rem;
+  color: #cccccc;
+}
+
+.footer-line .heart {
+  color: #ff4d6d;
+  margin-left: 4px;
+}

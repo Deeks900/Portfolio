@@ -1,0 +1,133 @@
+/* === SECTION STYLING === */
+.knowledge-section {
+  padding: 120px 80px;
+  position: relative;
+  z-index: 2;
+  margin-top: -180px; /* overlap slightly hero if needed */
+}
+
+.neon-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #00f5ff, #7b2cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #a0cfff;
+  margin-bottom: 80px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* === GRID LAYOUT === */
+.knowledge-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  margin-top: 60px;
+}
+
+.knowledge-content h3,
+.neon-subtitle {
+  font-size: 1.6rem;
+  color: #00f5ff;
+  margin-bottom: 16px;
+}
+
+.knowledge-desc {
+  color: #cccccc;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  font-size: 1rem;
+}
+
+/* === BULLETS + BLOG LINKS === */
+.knowledge-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.knowledge-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.knowledge-list .bullet {
+  color: #00f5ff;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin-right: 12px;
+}
+
+.knowledge-list a {
+  color: #9ad9ff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.knowledge-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: #00f5ff;
+  transition: width 0.3s ease;
+}
+
+.knowledge-list a:hover::after {
+  width: 100%;
+  color: #00f5ff;
+}
+
+/* === VIDEO SECTION === */
+.knowledge-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 0 30px rgba(0, 245, 255, 0.18),
+    0 20px 60px rgba(0, 0, 0, 0.85);
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-caption {
+  margin-top: 16px;
+  font-size: 0.95rem;
+  color: #9ad9ff;
+  text-align: center;
+}
+
+/* === GLASS EFFECT === */
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85);
+  padding: 30px;
+}
