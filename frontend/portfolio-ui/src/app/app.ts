@@ -6,11 +6,12 @@ import { Skills } from './components/skills/skills';
 import { Projects } from './components/projects/projects';
 import { Knowledge } from './components/knowledge/knowledge';
 import { Contact } from './components/contact/contact';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
-  imports: [Hero, About, Skills, Projects, Knowledge, Contact],
+  imports: [Hero, About, Skills, Projects, Knowledge, Contact, MatGridListModule],
   styleUrl: './app.css'
 })
 
@@ -95,17 +96,29 @@ export class App implements AfterViewInit{
     requestAnimationFrame(this.animate);
   }
    
+@HostListener('window:resize')
+@HostListener('window:orientationchange')
+public resizeCanvas() {
+  if (!this.canvas || !this.ctx) return;
 
-  
-  
+  const dpr = window.devicePixelRatio || 1;
 
-  @HostListener('window:resize')
-  public resizeCanvas() {
-    if (this.canvas) {
-      this.canvas.width = window.innerWidth;
-      this.canvas.height = window.innerHeight;
-    }
-  }
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  // Set CSS size
+  this.canvas.style.width = width + 'px';
+  this.canvas.style.height = height + 'px';
+
+  // Set actual resolution
+  this.canvas.width = width * dpr;
+  this.canvas.height = height * dpr;
+
+  // Reset scale before applying new one
+  this.ctx.setTransform(1, 0, 0, 1, 0, 0);
+  this.ctx.scale(dpr, dpr);
+}
+
   
 }
 

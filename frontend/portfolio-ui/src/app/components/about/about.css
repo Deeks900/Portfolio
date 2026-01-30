@@ -1,24 +1,24 @@
-/* About Section */
+/* ===========================
+   ABOUT SECTION BASE
+=========================== */
 .about {
-position: relative;
+  position: relative;
   margin: 0;
-  padding: 0 60px; /* horizontal padding only */
+  padding: 0 15px; /* horizontal padding like hero */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px;
   width: 100%;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Roboto', sans-serif; /* same as hero body text */
   letter-spacing: 1px;
   line-height: 1.7;
 }
 
-/* Glass Container */
 .about-container {
-    margin-top: -20px; 
   width: 100%;
-  max-width: 1260px;     /* same as hero-content */
-  padding: 40px 50px;
+  max-width: 1260px; /* same as hero-content */
+  margin: 0 auto;
+  padding: 40px 80px; /* same as hero-content */
   border-radius: 24px;
   backdrop-filter: blur(18px);
   background: rgba(255,255,255,0.05);
@@ -27,43 +27,50 @@ position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* aligns text to left like hero-left */
+  align-items: flex-start; /* left-aligned like hero-left */
   color: #cccccc;
 }
 
-
-/* Right Text (full width now) */
 .about-right {
   display: flex;
   flex-direction: column;
 }
 
-/* Neon title */
+/* Neon Title (like hero hello) */
 .neon-title {
-  font-size: 2.8rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
   margin-bottom: 20px;
-
   background: linear-gradient(90deg, #9ad9ff, #4cc9f0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
   text-shadow:
     0 0 10px rgba(154, 217, 255, 0.35),
     0 0 25px rgba(76, 201, 240, 0.25);
 }
 
-
-.subheading{
-    font-size: 1.2rem;
-    color: #00f5ff;
+/* Subheadings */
+.subheading {
+  font-family: 'Montserrat', sans-serif; /* same as hero name/role */
+  font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+  color: #00f5ff;
   margin-bottom: 5px;
   margin-top: 20px;
 }
 
 /* Highlight keywords */
 .highlight {
+  font-family: 'Montserrat', sans-serif; /* optional, keeps consistent */
   color: #6ef3ff;
   text-shadow: 0 0 1px #6ef3ff, 0 0 15px #6ef3ff;
+}
+
+/* Paragraphs */
+.about-right p {
+  font-family: 'Roboto', sans-serif; /* same as hero quote/body text */
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  line-height: 1.5;
+  margin-bottom: 10px;
 }
 
 /* Animate items */
@@ -74,7 +81,6 @@ position: relative;
   animation-delay: var(--delay);
 }
 
-/* Slide in + fade */
 @keyframes slideFade {
   to {
     opacity: 1;
@@ -82,3 +88,58 @@ position: relative;
   }
 }
 
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 992px) {
+  .about-container {
+    width: 90%;
+    padding: 30px 40px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-right {
+    text-align: center;
+  }
+
+  .neon-title {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+
+  .subheading {
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
+  .about-right p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-container {
+    width: 95%;
+    padding: 20px 15px;
+    text-align: center;
+  }
+
+  .neon-title {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .subheading {
+    font-size: 0.95rem;
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+
+  .about-right p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+}

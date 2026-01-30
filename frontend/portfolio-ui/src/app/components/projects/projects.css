@@ -13,8 +13,14 @@
   background: linear-gradient(90deg, #00f5ff, #7b2cff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
+.project-heading {
+  display: block;
+  margin-top: 12px;
+}
 .section-subtitle {
   text-align: center;
   color: #a0cfff;
@@ -151,3 +157,138 @@
   border: none;
 }
 
+/* ===============================
+   RESPONSIVE — PROJECTS SECTION
+================================ */
+
+/* Tablets & small laptops */
+@media (max-width: 992px) {
+  .projects-section {
+    padding: 90px 40px;
+    margin-top: 0px;
+  }
+
+  .project-card {
+    gap: 32px;
+    padding: 40px;
+  }
+
+  .project-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .section-title {
+    font-size: 2.6rem;
+  }
+
+  .section-subtitle {
+    margin-bottom: 60px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 70px 18px;
+    margin-top: 0px;
+  }
+
+  /* Stack card content vertically */
+  .project-card,
+  .project-card.reverse {
+    flex-direction: column;
+    gap: 26px;
+    padding: 26px;
+  }
+
+  /* Keep hover effect visible (no clipping) */
+  .projects-section,
+  .project-card {
+    overflow: visible;
+  }
+
+  .project-card {
+    position: relative;
+    z-index: 1;
+  }
+
+  .project-card:hover,
+  .project-card:active {
+    z-index: 10;
+  }
+
+  .project-content {
+    text-align: center;
+  }
+
+  .project-content h3 {
+    font-size: 1.45rem;
+  }
+
+  .project-desc {
+    font-size: 0.95rem;
+  }
+
+  .project-tech {
+    justify-content: center;
+  }
+
+  .project-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .project-actions a {
+    margin-right: 0;
+  }
+
+  .video-wrapper {
+    max-width: 100%;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    padding-top: 4px;
+    padding-bottom: 6px;
+    margin-top: -2px;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 45px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 60px 14px;
+  }
+
+  .project-card {
+    padding: 22px;
+  }
+
+  .project-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .project-desc {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .projects-section {
+    margin-top: -40px;   /* small overlap */
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-section {
+    margin-top: -40px;   /* even softer on very small screens */
+    padding-top: 70px;
+  }
+}

@@ -1,317 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@500;700;900&family=Roboto:wght@400;700&display=swap');
+
 /* ===========================
    HERO ROOT
 =========================== */
 .hero {
   background: radial-gradient(circle at top, #060c1f, #02040a);
-  overflow: hidden;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-family: 'Segoe UI', sans-serif;
-  color: #ffffff;
-  margin: 0;
-  margin-top: 60px;
-  padding: 0 40px; /* horizontal padding only */
+  align-items: flex-start;
+  padding: 20px 15px 30px 15px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
 }
-
 
 /* ===========================
    GLASS CONTENT
 =========================== */
 .hero-content {
-  position: relative;
-  z-index: 2;
-  width: 90%;
-  height: 100%;
-  padding: 60px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-    justify-content: space-between;
-  
-  
-}
-
-.glass {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(18px);
+  max-width: 1260px; /* align with About section */
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+  padding: 40px 80px;
+  gap: 25px;
+  overflow: hidden;
 }
 
 /* ===========================
    LEFT TEXT
 =========================== */
 .hero-left {
-  max-width: 480px;
-  margin-left: 50px; /* reduced for better spacing */
+  flex: 1 1 450px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 4px;  
+  text-align: left;
 }
-
-/* Animate items individually with delay */
-.animate-item {
-  opacity: 0;
-  transform: translateX(-40px);
-  animation: slideFade 1s forwards;
-  animation-delay: var(--delay);
-}
-
-/* Slide in + fade */
-@keyframes slideFade {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Intro text */
-.intro {
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  color: #b4dee2;
-  margin-bottom: 5px;
-}
-
-/* Name */
-.name {
-  font-size: 3.4rem;
-  margin: 10px 0;
-  font-weight: 700;
-  color: #00f5ff;
-  letter-spacing: 1px;
-  animation: neonGlow 2.5s ease-in-out infinite alternate;
-}
-
-/* Role */
-.role {
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: #4cc9f0;
-  margin-bottom: 22px;
-}
-
-/* Quote */
-.quote {
-  font-size: 1.1rem;
-  color: #cccccc;
-  line-height: 1.7;
-  font-style: italic;
-}
-
 
 /* ===========================
-   IMAGE SECTION
+   TEXT STAGGERED ANIMATION
+=========================== */
+.hero-left p.intro,
+.hero-left h1.name,
+.hero-left h2.role,
+.hero-left p.quote {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideFade 0.8s forwards;
+}
+
+.hero-left p.intro { animation-delay: 0.2s; }
+.hero-left h1.name { animation-delay: 0.6s; }
+.hero-left h2.role { animation-delay: 1s; }
+.hero-left p.quote { animation-delay: 1.4s; }
+
+@keyframes slideFade {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* ===========================
+   HELLO TEXT
+=========================== */
+.hello-text {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  background: linear-gradient(90deg, #00f5ff, #4cc9f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation: floatHello 2.5s ease-in-out infinite alternate;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  padding: 2px 0;
+}
+
+.hello-text {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  background: linear-gradient(90deg, #00f5ff, #7b2cff); /* MATCHED */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation: floatHello 2.5s ease-in-out infinite alternate;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  padding: 2px 0;
+}
+
+@keyframes floatHello {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-5px); }
+}
+
+/* ===========================
+   NAME
+=========================== */
+.name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.5rem, 8vw, 5.8rem);
+  font-weight: 900;
+  color: #00f5ff;
+  margin: 0;
+  line-height: 1.05;
+  text-shadow: 0 0 5px #00f5ff, 0 0 8px #00f5ff;
+}
+
+/* ===========================
+   ROLE
+=========================== */
+.role {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 500;
+  color: #4cc9f0;
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* ===========================
+   QUOTE
+=========================== */
+.quote {
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+  color: #cccccc;
+  font-style: italic;
+  line-height: 1.3;
+  max-width: 450px;
+  padding-left: 12px;
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* ===========================
+   RIGHT IMAGE
 =========================== */
 .hero-right {
+  flex: 1 1 260px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 70px;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: popInImage 1s forwards;
+  animation-delay: 1.6s;
 }
 
+@keyframes popInImage {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* IMAGE CONTAINER */
 .image-container {
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: 230px;  
+  height: 230px; 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
-
-
-
-.image-container {
-  position: relative;
-  width: 260px;  /* same as image */
-  height: 260px; /* same as image */
-}
-
-/* BASE SQUARE STYLING */
+/* NEON SQUARES */
 .square {
   position: absolute;
-  width: 120px;
-  height: 120px;
-  background: #05112a; /* dark blue base to blend with hero background */
-  border: 2px solid #00f5ff; /* neon cyan outline */
-  box-shadow: 
-    0 0 15px #00f5ff,     /* neon glow */
-    0 0 30px #00f5ff, 
-    0 0 50px #00f5ff; 
-  opacity: 0.5;
-  z-index: 0;
-  transform: rotate(0deg);
+  background: #05112a;
+  border: 2px solid #00f5ff;
+  box-shadow: 0 0 15px #00f5ff, 0 0 25px #00f5ff, 0 0 35px #00f5ff;
+  opacity: 0.35;
   border-radius: 6px;
-  animation:
-    rotateSquare 20s linear infinite,
-    floatSquare 6s ease-in-out infinite alternate,
-    pulseSquare 3s ease-in-out infinite;
-}
-/* INDIVIDUAL POSITIONS & SIZES */
-.square1 {
-  width: 100px;
-  height: 100px;
-  top: -20px;
-  left: -30px;
-  animation-duration: 16s;
+  animation: rotateSquare 20s linear infinite, floatSquare 6s ease-in-out infinite alternate, pulseSquare 3s ease-in-out infinite;
 }
 
-.square2 {
-  width: 120px;
-  height: 120px;
-  top: 10px;
-  right: -20px;
-  animation-duration: 20s;
-}
+.square1 { width: 115px; height: 115px; top: -2px; left: -5px; animation-duration: 18s; }
+.square2 { width: 145px; height: 145px; top: 0; right: -5px; animation-duration: 22s; }
+.square3 { width: 160px; height: 160px; bottom: -3px; left: 7px; animation-duration: 30s; }
 
-.square3 {
-  width: 140px;
-  height: 140px;
-  bottom: -25px;
-  left: 15px;
-  animation-duration: 24s;
-}
-
-/* ANIMATIONS */
-@keyframes rotateSquare {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes floatSquare {
-  0%   { transform: translateY(0px) rotate(0deg); }
-  50%  { transform: translateY(-10px) rotate(5deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
-}
-
-@keyframes pulseSquare {
-  0%   { opacity: 0.3; }
-  50%  { opacity: 0.6; }
-  100% { opacity: 0.3; }
-}
-
-/* ===========================
-   IMAGE BORDER
-=========================== */
 /* IMAGE BORDER */
 .image-border {
-  width: 260px;
-  height: 260px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  position: relative;
-  z-index: 1;
-  background: linear-gradient(135deg, #00f5ff, #002040); /* cyan to deep blue gradient */
-  box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.9),
-    0 0 30px #00f5ff, 
-    0 0 60px #00f5ff; /* subtle neon glow */
-  animation: rotateSlow 8s ease-in-out infinite;
+  background: linear-gradient(135deg, #00f5ff, #002040);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7), 0 0 20px #00f5ff, 0 0 40px #00f5ff;
   overflow: hidden;
+  animation: rotateSlow 8s ease-in-out infinite;
 }
 
 .image-border img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
   object-fit: cover;
-  display: block;
+  border-radius: 50%;
 }
 
-/* Rotating Squares with 3D tilt */
-@keyframes rotateSquare {
-  0%   { transform: rotate3d(0,1,0,0deg) rotate(0deg); }
-  25%  { transform: rotate3d(0,1,0,10deg) rotate(90deg); }
-  50%  { transform: rotate3d(0,1,0,-10deg) rotate(180deg); }
-  75%  { transform: rotate3d(0,1,0,5deg) rotate(270deg); }
-  100% { transform: rotate3d(0,1,0,0deg) rotate(360deg); }
+/* ANIMATIONS */
+@keyframes rotateSquare {0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+@keyframes floatSquare {0%{transform:translate(0,0) scale(1);}25%{transform:translate(3px,-4px) scale(1.08);}50%{transform:translate(-3px,-6px) scale(1.1);}75%{transform:translate(2px,-3px) scale(1.08);}100%{transform:translate(0,0) scale(1);}}
+@keyframes pulseSquare {0%,100%{opacity:0.35;}50%{opacity:0.6;}}
+@keyframes rotateSlow {0%,50%,100%{transform:rotate(-1deg) scale(1);}25%{transform:rotate(0.8deg) scale(1.02);}75%{transform:rotate(-0.8deg) scale(0.98);}}
+
+/* ===========================
+   SMALL SCREEN RESPONSIVE
+=========================== */
+@media (max-width: 992px) {
+  .hero-content {
+     flex-direction: column;
+      padding: 20px 0px 15px 15px; 
+      width: 80%; max-width: 530px; 
+      margin: 0 auto; 
+      text-align: center; 
+    }
+
+  .hero-left 
+  { 
+    gap: 1.5px; 
+    margin: 0, auto;
+     padding-top: 0px;
+      margin-top: -100px; 
+      margin-bottom: -120px;
+       min-height: 0; 
+       text-align: center;
+      }
+  
+  .role { font-size: 1.9rem} 
+  .quote { font-size: 1rem }
+   .image-container { width: 120px; height: 120px; }
+
+
+  .square1 { width: 90px; height: 90px; }
+  .square2 { width: 110px; height: 110px; }
+  .square3 { width: 125px; height: 125px; }
+
+  .role { font-size: 1.9rem; margin-bottom: 2px; }
+  .quote { font-size: 1rem; margin-top: 2px; max-width: 90%}
+
+    }
+@media (max-width: 576px) {
+  .hero-content {           
+    gap: 4px;
+    width: 96%;                   
+    margin: 0 auto;               
+    padding: 10px 5px;
+  }
+
+  .hero-left { 
+    gap: 1.2px; 
+    padding: 0 5px;
+  }
+
+  .image-container { width: 150px; height: 150px; }
+
+  .square1 { width: 70px; height: 70px; }
+  .square2 { width: 85px; height: 85px; }
+  .square3 { width: 100px; height: 100px; }
+
+  .name { font-size: 3rem; }
+  .role { font-size: 1.6rem; margin-bottom: 1px; }
+  .quote { font-size: 1rem; padding-left: 4px; margin-top: 1px; }
+  .intro { font-size: 1.6rem; line-height: 1.1; }
 }
 
-/* Floating motion: up-down + slight side movement + scale */
-@keyframes floatSquare {
-  0%   { transform: translate(0px, 0px) scale(1) rotate(0deg); }
-  25%  { transform: translate(5px, -8px) scale(1.05) rotate(3deg); }
-  50%  { transform: translate(-5px, -12px) scale(1.1) rotate(-3deg); }
-  75%  { transform: translate(3px, -6px) scale(1.05) rotate(2deg); }
-  100% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+/* ===========================
+   HERO SQUARES POP-IN
+=========================== */
+.square {
+  opacity: 0; /* initially invisible */
+  animation: rotateSquare 20s linear infinite,
+             floatSquare 6s ease-in-out infinite alternate,
+             pulseSquare 3s ease-in-out infinite,
+             popInSquare 0.8s forwards; /* new pop-in animation */
 }
 
-/* Neon Pulse with glow flicker */
-@keyframes pulseSquare {
-  0%   { opacity: 0.3; box-shadow: 0 0 10px #00f5ff, 0 0 20px #00f5ff, 0 0 30px #00f5ff; }
-  25%  { opacity: 0.5; box-shadow: 0 0 15px #00f5ff, 0 0 25px #00f5ff, 0 0 40px #00f5ff; }
-  50%  { opacity: 0.7; box-shadow: 0 0 20px #00f5ff, 0 0 35px #00f5ff, 0 0 50px #00f5ff; }
-  75%  { opacity: 0.5; box-shadow: 0 0 15px #00f5ff, 0 0 25px #00f5ff, 0 0 40px #00f5ff; }
-  100% { opacity: 0.3; box-shadow: 0 0 10px #00f5ff, 0 0 20px #00f5ff, 0 0 30px #00f5ff; }
-}
+.square1 { animation-delay: 1.8s, 0s, 0s, 1.8s; }
+.square2 { animation-delay: 1.9s, 0s, 0s, 1.9s; }
+.square3 { animation-delay: 2s, 0s, 0s, 2s; }
 
-/* Image slow rotation with subtle scale & glow flicker */
-@keyframes rotateSlow {
-  0%   { transform: rotate(-1.2deg) scale(1); box-shadow: 0 20px 40px rgba(0,0,0,0.9), 0 0 30px #00f5ff, 0 0 60px #00f5ff; }
-  25%  { transform: rotate(0.8deg) scale(1.02); box-shadow: 0 22px 42px rgba(0,0,0,0.9), 0 0 35px #00f5ff, 0 0 65px #00f5ff; }
-  50%  { transform: rotate(1.2deg) scale(1); box-shadow: 0 20px 40px rgba(0,0,0,0.9), 0 0 30px #00f5ff, 0 0 60px #00f5ff; }
-  75%  { transform: rotate(-0.8deg) scale(0.98); box-shadow: 0 18px 38px rgba(0,0,0,0.9), 0 0 28px #00f5ff, 0 0 55px #00f5ff; }
-  100% { transform: rotate(-1.2deg) scale(1); box-shadow: 0 20px 40px rgba(0,0,0,0.9), 0 0 30px #00f5ff, 0 0 60px #00f5ff; }
-}
-
-/* LEFT TEXT ANIMATION */
-.animate-left {
-  opacity: 0;
-  transform: translateX(-40px);
-  animation: slideFadeIn 1s forwards;
-  animation-delay: 0.3s; /* delay for natural flow */
-}
-
-/* RIGHT IMAGE ANIMATION */
-.animate-right {
-  opacity: 0;
-  transform: translateX(40px);
-  animation: slideFadeIn 1s forwards;
-  animation-delay: 0.6s; /* slightly after text */
-}
-
-/* KEYFRAMES */
-@keyframes slideFadeIn {
+@keyframes popInSquare {
   0% {
     opacity: 0;
-    transform: translateX(var(--translate-x, 0));
+    transform: scale(0.5);
   }
   100% {
-    opacity: 1;
-    transform: translateX(0);
+    opacity: 0.35; /* matches your original opacity */
+    transform: scale(1);
   }
-}
-/* ALL ITEMS SLIDE + FADE IN */
-/* ALL ITEMS SLIDE + FADE IN FROM LEFT */
-.animate-item {
-  opacity: 0;
-  transform: translateX(-50px); /* slide from left */
-  animation: slideRightFade 0.8s forwards;
-  animation-delay: var(--delay); /* stagger using custom property */
 }
 
-/* KEYFRAMES */
-@keyframes slideRightFade {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+
+/* Subtle neon glow pulse synced with text */
+@keyframes neonPulse {
+  0%, 100% { box-shadow: 0 0 15px #00f5ff, 0 0 25px #00f5ff, 0 0 35px #00f5ff; }
+  50% { box-shadow: 0 0 25px #00f5ff, 0 0 40px #00f5ff, 0 0 55px #00f5ff; }
 }
+
+/* Apply neon pulse to squares */
+.square1, .square2, .square3 {
+  animation: rotateSquare 20s linear infinite, floatSquare 6s ease-in-out infinite alternate,
+             pulseSquare 3s ease-in-out infinite, neonPulse 4s ease-in-out infinite;
+}
+
+/* Subtle continuous rotation to image border */
+@keyframes slowRotate {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.image-border {
+  animation: rotateSlow 8s ease-in-out infinite, slowRotate 10s linear infinite;
+}
+
+/* Staggered neon pulse for squares */
+@keyframes neonPulse1 {
+  0%, 100% { box-shadow: 0 0 15px #00f5ff, 0 0 25px #00f5ff, 0 0 35px #00f5ff; }
+  50% { box-shadow: 0 0 25px #00f5ff, 0 0 40px #00f5ff, 0 0 55px #00f5ff; }
+}
+
+@keyframes neonPulse2 {
+  0%, 100% { box-shadow: 0 0 18px #00f5ff, 0 0 28px #00f5ff, 0 0 38px #00f5ff; }
+  50% { box-shadow: 0 0 28px #00f5ff, 0 0 43px #00f5ff, 0 0 58px #00f5ff; }
+}
+
+@keyframes neonPulse3 {
+  0%, 100% { box-shadow: 0 0 12px #00f5ff, 0 0 22px #00f5ff, 0 0 32px #00f5ff; }
+  50% { box-shadow: 0 0 22px #00f5ff, 0 0 37px #00f5ff, 0 0 52px #00f5ff; }
+}
+
+/* Apply individual neon pulse to each square */
+.square1 { animation: rotateSquare 20s linear infinite, floatSquare 6s ease-in-out infinite alternate,
+           pulseSquare 3s ease-in-out infinite, neonPulse1 4s ease-in-out infinite; }
+
+.square2 { animation: rotateSquare 20s linear infinite, floatSquare 6s ease-in-out infinite alternate,
+           pulseSquare 3s ease-in-out infinite, neonPulse2 4s ease-in-out infinite; }
+
+.square3 { animation: rotateSquare 20s linear infinite, floatSquare 6s ease-in-out infinite alternate,
+           pulseSquare 3s ease-in-out infinite, neonPulse3 4s ease-in-out infinite; }
+
+/* Subtle slow rotation of image */
+@keyframes slowRotate {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.image-border {
+  animation: rotateSlow 8s ease-in-out infinite, slowRotate 12s linear infinite;
+}
+/* ===========================
+   STAGGERED HERO TEXT ANIMATION
+=========================== */
+.hero-left p.intro,
+.hero-left h1.name,
+.hero-left h2.role,
+.hero-left p.quote {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideFade 0.8s forwards;
+}
+
+.hero-left p.intro  { animation-delay: 0.2s; }
+.hero-left h1.name  { animation-delay: 0.6s; }
+.hero-left h2.role  { animation-delay: 1s; }
+.hero-left p.quote  { animation-delay: 1.4s; }
+
+@keyframes slideFade {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+/* ===========================
+   HERO IMAGE POP-IN
+=========================== */
 .hero-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: popInImage 0.8s forwards;
+  animation-delay: 1.8s; /* start after quote animation (1.4s) */
 }
 
-.image-container {
-  opacity: 0;
-  transform: translateX(50px); /* slide from right */
-  animation: slideRightFade 0.8s forwards;
-  animation-delay: 1.4s; /* starts after text finishes */
+@keyframes popInImage {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

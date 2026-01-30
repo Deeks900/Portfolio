@@ -13,6 +13,8 @@
   background: linear-gradient(90deg, #00f5ff, #7b2cff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-top: 12px;
+  padding-bottom: 18px;
 }
 
 .section-subtitle {
@@ -130,4 +132,113 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85);
   padding: 30px;
+}
+
+/* ===========================
+   KNOWLEDGE – RESPONSIVE
+=========================== */
+
+/* Tablet & below */
+@media (max-width: 992px) {
+  .knowledge-section {
+    padding: 90px 40px;
+    margin-top: -90px; /* softer overlap */
+  }
+
+  .knowledge-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .knowledge-content h3,
+  .neon-subtitle {
+    text-align: center;
+  }
+
+  .knowledge-desc {
+    text-align: center;
+  }
+
+  .knowledge-list li {
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .knowledge-section {
+    padding: 70px 20px;
+    margin-top: -50px;
+  }
+
+  .neon-title {
+    font-size: 2.4rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 50px;
+  }
+
+  .knowledge-grid {
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .glass {
+    padding: 22px;
+  }
+
+  .knowledge-list li {
+    font-size: 0.95rem;
+  }
+
+  .knowledge-list .bullet {
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+
+  .video-caption {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+}
+@media (max-width: 576px) {
+  .knowledge-content h3,
+  .neon-title {
+    font-size: 1.35rem;
+    line-height: 1.35;
+    word-break: break-word;
+    text-align: center;
+    padding: 0 10px;
+  }
+  .neon-title{
+    margin-top: -50px;
+  }
+}
+@media (max-width: 576px) {
+  .knowledge-list {
+    padding-left: 0;
+  }
+
+  .knowledge-list li {
+    justify-content: flex-start;   /* stop centering */
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .knowledge-list .bullet {
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .knowledge-list a {
+    line-height: 1.5;
+    display: inline-block;
+  }
+}
+@media (max-width: 576px) {
+  .knowledge-list li {
+    margin-bottom: 14px;
+  }
 }

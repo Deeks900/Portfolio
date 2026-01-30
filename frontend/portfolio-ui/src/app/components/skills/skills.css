@@ -1,26 +1,37 @@
+/* ===========================
+   SKILLS SECTION
+=========================== */
 .skills-section {
-    position: relative;
+  position: relative;
   width: 100%;
   padding: 120px 80px;
-  position: relative;
   z-index: 2;
   margin-top: -100px;
+  font-family: 'Segoe UI', sans-serif;/* consistent body font */
 }
 
-/* Title */
+/* Section Title */
 .section-title {
-  font-size: 3rem;
+  font-family: 'Segoe UI', sans-serif;/* match Hero titles */
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3rem);
   text-align: center;
   margin-bottom: 10px;
+  margin-top: 25px;
   background: linear-gradient(90deg, #00f5ff, #7b2cff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  line-height: 1.1;
 }
 
+/* Section Subtitle */
 .section-subtitle {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 500;
   text-align: center;
   color: #a0cfff;
   margin-bottom: 60px;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
 }
 
 /* Grid */
@@ -28,13 +39,17 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
+  width: 100%;
+  max-width: 1260px; /* align with Hero & About */
+  margin: 0 auto;
 }
 
-/* Card */
+/* Skill Card */
 .skill-card {
   padding: 30px;
   border-radius: 22px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  font-family: 'Roboto', sans-serif; /* consistent font */
 }
 
 .skill-card:hover {
@@ -46,6 +61,8 @@
 .skill-card h3 {
   margin-bottom: 18px;
   font-size: 1.3rem;
+  font-family: 'Segoe UI', sans-serif; /* subheadings consistent */
+  font-weight: 600;
   color: #00f5ff;
 }
 
@@ -66,6 +83,7 @@
   border-radius: 12px;
   color: #e6f1ff;
   transition: background 0.3s ease, transform 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .skill-list span i {
@@ -75,4 +93,83 @@
 .skill-list span:hover {
   background: rgba(0, 245, 255, 0.15);
   transform: scale(1.05);
+}
+
+/* ===========================
+   RESPONSIVE SKILLS
+=========================== */
+@media (max-width: 992px) {
+  .skills-section {
+    padding: 80px 40px;
+  }
+
+  .skills-grid {
+    gap: 20px;
+  }
+
+  .skill-card {
+    padding: 20px;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  .section-subtitle {
+    font-size: clamp(0.95rem, 3vw, 1.15rem);
+  }
+
+  .skill-card h3 {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+  }
+
+  .skill-list span {
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-section {
+    padding: 60px 20px;
+  }
+
+  .skills-grid {
+    gap: 15px;
+  }
+
+  .skill-card {
+    padding: 15px;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .section-subtitle {
+    font-size: clamp(0.9rem, 3vw, 1rem);
+  }
+
+  .skill-card h3 {
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+  }
+
+  .skill-list span {
+    font-size: clamp(0.7rem, 2vw, 0.85rem);
+  }
+}
+/* ===========================
+   Responsive margin fix
+=========================== */
+@media (max-width: 992px) {
+  .skills-section {
+    margin-top: 0; /* remove overlap on tablets */
+    padding: 80px 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-section {
+    margin-top: 0; /* remove overlap on mobile */
+    padding: 60px 20px;
+  }
 }
